@@ -1,3 +1,42 @@
+div.intro {
+    display: none;
+}
+
+div.intro p {
+    margin: 38px;
+}
+
+form#attributeVerification div#attributeList ul {
+    padding: 0;
+}
+
+form#attributeVerification div#attributeList ul li {
+    list-style: none;
+}
+
+form#attributeVerification div#attributeList ul li div.attrEntry label#preferredMfaMethod_label {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+form#attributeVerification div#attributeList ul li div.attrEntry a.helpLink {
+    display: none;
+}
+
+/*form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_phone,
+form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_email {
+    width: 24px !important;
+    height: 24px;
+    float: left;
+    clear: left;
+}
+
+form#attributeVerification div#attributeList ul li div.attrEntry label#phone_option,
+form#attributeVerification div#attributeList ul li div.attrEntry input#email_option {
+    float: left;
+    margin: .3rem;
+}*/
+
 div.buttons {
     display: flex;
     justify-content: space-between;
