@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5769656C-E8C8-4224-B9E2-A632A01B5C36}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{DE243D00-80C1-46D4-B9A4-9B5C35A9D990}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{7CB264B9-69B4-4A77-8B0E-8654EF9BEA8A}"
+	ProjectSection(SolutionItems) = preProject
+		assets\images\GBLOGO_MonoRVB_Blue.png = assets\images\GBLOGO_MonoRVB_Blue.png
+		assets\images\GBLOGO_RVB_White.svg = assets\images\GBLOGO_RVB_White.svg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{E0100445-2C01-4F9F-B5FF-99A52DD66082}"
+	ProjectSection(SolutionItems) = preProject
+		assets\styles\master.css = assets\styles\master.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CB264B9-69B4-4A77-8B0E-8654EF9BEA8A} = {DE243D00-80C1-46D4-B9A4-9B5C35A9D990}
+		{E0100445-2C01-4F9F-B5FF-99A52DD66082} = {DE243D00-80C1-46D4-B9A4-9B5C35A9D990}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB5DD72A-2817-4D69-8366-9AF69C1929B8}
+	EndGlobalSection
+EndGlobal
