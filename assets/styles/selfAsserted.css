@@ -1,12 +1,14 @@
 div.intro {
-    display: none;
-}
-
-div.intro p {
     margin: 38px;
 }
 
+div.intro p {
+    display: none;
+}
+
 form#attributeVerification div#attributeList ul {
+    display: flex;
+    flex-direction: column;
     padding: 0;
 }
 
@@ -15,27 +17,39 @@ form#attributeVerification div#attributeList ul li {
 }
 
 form#attributeVerification div#attributeList ul li div.attrEntry label#preferredMfaMethod_label {
+    display: block;
+    float: none;
     font-size: 2rem;
     line-height: 1.2;
+    margin-bottom: 35px;
 }
 
-form#attributeVerification div#attributeList ul li div.attrEntry a.helpLink {
+form#attributeVerification div#attributeList ul li div.attrEntry div.error {
     display: none;
 }
 
-/*form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_phone,
+form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_phone,
 form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_email {
     width: 24px !important;
+    box-shadow: none;
     height: 24px;
+    display: inline-block;
     float: left;
     clear: left;
+    margin: .5rem;
 }
 
 form#attributeVerification div#attributeList ul li div.attrEntry label#phone_option,
 form#attributeVerification div#attributeList ul li div.attrEntry input#email_option {
     float: left;
-    margin: .3rem;
-}*/
+    display: inline-block !important;
+    margin: .5rem;
+    font-weight: 400;
+}
+
+form#attributeVerification div#attributeList ul li div.attrEntry a.helpLink {
+    display: none;
+}
 
 div.buttons {
     display: flex;
