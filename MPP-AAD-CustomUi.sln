@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
 		README.md = README.md
+		selfAsserted.html = selfAsserted.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{DE243D00-80C1-46D4-B9A4-9B5C35A9D990}"
