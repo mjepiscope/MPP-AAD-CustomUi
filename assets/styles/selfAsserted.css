@@ -40,7 +40,7 @@ form#attributeVerification div#attributeList ul li div.attrEntry input#preferred
 }
 
 form#attributeVerification div#attributeList ul li div.attrEntry label#phone_option,
-form#attributeVerification div#attributeList ul li div.attrEntry input#email_option {
+form#attributeVerification div#attributeList ul li div.attrEntry label#email_option {
     float: left;
     display: inline-block !important;
     margin: .5rem;
