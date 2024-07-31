@@ -16,6 +16,8 @@ export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
         var buttons = Array.prototype.slice.call(p.querySelectorAll(buttonSelectors), 0);
 
         buttons.forEach((b) => {
+            if (!b) return;
+
             b.addEventListener('click', () => {
                 if (!hasErrorMessage()) {
                     setSpinnerStyleDisplay('block');

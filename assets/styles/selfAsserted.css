@@ -61,9 +61,9 @@ form#attributeVerification div#attributeList ul {
 
             label#phone_option, label#email_option {
                 float: left;
-                display: inline-block !important;
-                margin: .5rem;
+                font-size: 20px;
                 font-weight: 400;
+                margin: 3px 3px 3px 10px;
             }
 
             a.helpLink {
