@@ -83,7 +83,18 @@ function handleValidateCodeRequest(jqXhr) {
 }
 
 function setVerifyCodeView() {
-    document.querySelector('input#readOnlyEmail').setAttribute('disabled', 'true');
-    document.querySelector('input#readOnlyEmail_ver_input').focus();
+    let $inputEmail = document.querySelector('input#readOnlyEmail');
+
+    if (!!$inputEmail) {
+        $inputEmail.setAttribute('disabled', 'true');
+    }
+
+    let $inputCode = document.querySelector('input#readOnlyEmail_ver_input');
+
+    if (!!$inputCode) {
+        $inputCode.value = '';
+        $inputCode.focus();
+    }
+
     setSpinnerStyleDisplay('none');
 }

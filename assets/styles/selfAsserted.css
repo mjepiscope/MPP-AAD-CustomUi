@@ -17,6 +17,10 @@ form#attributeVerification div#attributeList ul {
         div.attrEntry {
             div:first-child {
                 margin-bottom: 20px;
+
+                div.error {
+                    color: red;
+                }
             }
 
             label#preferredMfaMethod_label {
