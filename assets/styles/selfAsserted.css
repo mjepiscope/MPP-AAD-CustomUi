@@ -17,8 +17,6 @@ form#attributeVerification div#attributeList ul {
         div.attrEntry {
             text-align: left;
 
-
-
             div:first-child {
                 margin-bottom: 20px;
                 text-align: center;
@@ -72,6 +70,26 @@ form#attributeVerification div#attributeList ul {
 
             a.helpLink {
                 display: none;
+            }
+
+            div.buttons.verify {
+                display: block;
+                margin-top: 15px;
+
+                input#readOnlyEmail_ver_input {
+                    background: 0 0;
+                    font: inherit;
+                    color: currentColor;
+                    border: none;
+                    outline: 0;
+                    padding: 0;
+                    margin: 5px 0 5px 0;
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    border-bottom: 1px solid rgba(38, 53, 140, .5);
+                }
             }
         }
     }
