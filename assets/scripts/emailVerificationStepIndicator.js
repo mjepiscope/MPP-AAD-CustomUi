@@ -14,17 +14,6 @@ const STATUS_OK = 0,
 const REQUEST_TYPE_RESPONSE = 'RESPONSE'
     , REQUEST_TYPE_VERIFICATION_REQUEST = 'VERIFICATION_REQUEST'
     , REQUEST_TYPE_VALIDATION_REQUEST = 'VALIDATION_REQUEST';
-    
-let $api = document.querySelector('div#api');
-
-export function setOnStepChangeCallback(callback) {
-    //var observer = new MutationObserver(callback);
-
-    //observer.observe($api, {
-    //    attributes: true,
-    //    attributeFilter: ['data-step']
-    //});
-}
 
 // At present, there doesn't seem to be a way to be notified about/detect
 // whether the user should be prompted for a verification code. But, for
@@ -42,7 +31,6 @@ export function handleRequest(settings, jqXhr) {
 
     switch (requestType) {
         case REQUEST_TYPE_RESPONSE:
-            //setBodyAttr('send-code');
             setSpinnerStyleDisplay('none');
             break;
         case REQUEST_TYPE_VERIFICATION_REQUEST:
@@ -63,11 +51,7 @@ export function handleRequest(settings, jqXhr) {
 function handleSendVerificationCodeRequest(jqXhr) {
     jqXhr.done((data) => {
         if ((data.status === "200") && (data.result === STATUS_OK)) {
-            // Code sent successfully.
-            //setBodyAttr('verify-code');
-            document.querySelector('input#readOnlyEmail').setAttribute('disabled', 'true');
-            document.querySelector('input#readOnlyEmail_ver_input').focus();
-            setSpinnerStyleDisplay('none');
+            setVerifyCodeView();
         }
     });
 }
@@ -82,26 +66,24 @@ function handleSendVerificationCodeRequest(jqXhr) {
 function handleValidateCodeRequest(jqXhr) {
     jqXhr.done((data) => {
         setSpinnerStyleDisplay('none');
-        //if (data.status !== "200") return;
 
-        //switch (data.result) {
-        //    case STATUS_OK:
-        //        //setBodyAttr('email-verified');
-        //        setSpinnerStyleDisplay('none');
-        //        break;
-        //    case STATUS_RETRIES_EXCEEDED:
-        //        //setBodyAttr('send-code');
-        //        break;
-        //    case STATUS_WRONG_CODE:
-        //        setSpinnerStyleDisplay('none');                
-        //        break;
-        //}
+        if (data.status !== "200") return;
+
+        switch (data.result) {
+            case STATUS_OK:
+                setSpinnerStyleDisplay('none');
+                break;
+            case STATUS_RETRIES_EXCEEDED:
+                break;
+            case STATUS_WRONG_CODE:
+                setVerifyCodeView();              
+                break;
+        }
     });
 }
 
-/**
- * Sets the current step of the form into the body.
- */
-//function setBodyAttr(step) {
-//    $api.setAttribute('data-step', step);
-//}
+function setVerifyCodeView() {
+    document.querySelector('input#readOnlyEmail').setAttribute('disabled', 'true');
+    document.querySelector('input#readOnlyEmail_ver_input').focus();
+    setSpinnerStyleDisplay('none');
+}
