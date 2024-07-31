@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{E01004
 	ProjectSection(SolutionItems) = preProject
 		assets\styles\master.css = assets\styles\master.css
 		assets\styles\selfAsserted.css = assets\styles\selfAsserted.css
+		assets\styles\spinner.css = assets\styles\spinner.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{9C3E5155-8D22-4AB8-B2EE-6C8842F54EAE}"
