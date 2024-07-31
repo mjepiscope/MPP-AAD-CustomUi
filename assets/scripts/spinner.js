@@ -7,18 +7,22 @@ export function setSpinnerStyleDisplay(display) {
 }
 
 export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
-    var divButtons = window.document.querySelector(parentSelector);
+    var parents = window.document.querySelectorAll(parentSelector);
 
     if (!divButtons) return;
-    
-    var buttons = Array.prototype.slice.call(divButtons.querySelectorAll(buttonSelectors), 0);
 
-    buttons.forEach((b) => {
-        b.addEventListener('click', () => {
-            if (!hasErrorMessage()) {
-                setSpinnerStyleDisplay('block');
-            }
+    parents.forEach(p => {
+
+        var buttons = Array.prototype.slice.call(p.querySelectorAll(buttonSelectors), 0);
+
+        buttons.forEach((b) => {
+            b.addEventListener('click', () => {
+                if (!hasErrorMessage()) {
+                    setSpinnerStyleDisplay('block');
+                }
+            });
         });
+
     });
 }
 
