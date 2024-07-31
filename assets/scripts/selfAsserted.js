@@ -2,7 +2,7 @@ import { identifyStep, setOnStepChangeCallback } from './emailVerificationStepIn
 import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js';
 
 setSpinnerStyleDisplay('none');
-setupSpinnerTriggerButtons('div.buttons', 'button#continue');
+setupSpinnerTriggerButtons('div.buttons', 'button#continue, button#readOnlyEmail_ver_but_send');
 
 //let $body = document.querySelector('body');
 let $api = document.querySelector('div#api');
@@ -16,6 +16,7 @@ setOnStepChangeCallback(() => {
         case 'send-code':
             break;
         case 'verify-code':
+            setSpinnerStyleDisplay('none');
             break;
         case 'email-verified':
             break;
