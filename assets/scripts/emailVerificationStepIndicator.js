@@ -8,7 +8,7 @@ import { setSpinnerStyleDisplay } from './spinner.js';
 */
 
 const STATUS_OK = 0,
-    STATUS_RETRIES_EXCEEDED = 2
+    STATUS_RETRIES_EXCEEDED = 2,
     STATUS_WRONG_CODE = 3;
 
 const REQUEST_TYPE_RESPONSE = 'RESPONSE'
