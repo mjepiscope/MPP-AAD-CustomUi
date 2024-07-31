@@ -8,10 +8,10 @@ import { setSpinnerStyleDisplay } from './spinner.js';
 */
 
 const STATUS_OK = 0,
-    STATUS_RETRIES_EXCEEDED = 2,
     STATUS_WRONG_CODE = 3;
 
-const REQUEST_TYPE_RESPONSE = 'RESPONSE'
+const REQUEST_TYPE = 'request_type'
+    , REQUEST_TYPE_RESPONSE = 'RESPONSE'
     , REQUEST_TYPE_VERIFICATION_REQUEST = 'VERIFICATION_REQUEST'
     , REQUEST_TYPE_VALIDATION_REQUEST = 'VALIDATION_REQUEST';
 
@@ -27,7 +27,7 @@ const REQUEST_TYPE_RESPONSE = 'RESPONSE'
 // that the user provided.
 export function handleRequest(settings, jqXhr) {
     let parsedData = new URLSearchParams(settings.data),
-        requestType = parsedData.get('request_type')
+        requestType = parsedData.get(REQUEST_TYPE)
 
     switch (requestType) {
         case REQUEST_TYPE_RESPONSE:
@@ -50,7 +50,9 @@ export function handleRequest(settings, jqXhr) {
  */
 function handleSendVerificationCodeRequest(jqXhr) {
     jqXhr.done((data) => {
-        if ((data.status === "200") && (data.result === STATUS_OK)) {
+        setSpinnerStyleDisplay('none');
+
+        if (data.status === "200" && data.result === STATUS_OK) {
             setVerifyCodeView();
         }
     });
@@ -69,15 +71,13 @@ function handleValidateCodeRequest(jqXhr) {
 
         if (data.status !== "200") return;
 
-        switch (data.result) {
-            case STATUS_OK:
-                setSpinnerStyleDisplay('none');
-                break;
-            case STATUS_RETRIES_EXCEEDED:
-                break;
-            case STATUS_WRONG_CODE:
-                setVerifyCodeView();              
-                break;
+        /* result:
+            0 - correct code
+            2 - retries exceeded
+            3 - incorrect code
+        */
+        if (data.result === STATUS_WRONG_CODE) {
+            setVerifyCodeView();
         }
     });
 }
@@ -95,6 +95,4 @@ function setVerifyCodeView() {
         $inputCode.value = '';
         $inputCode.focus();
     }
-
-    setSpinnerStyleDisplay('none');
 }
