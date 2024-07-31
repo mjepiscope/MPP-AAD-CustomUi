@@ -15,11 +15,8 @@ form#attributeVerification div#attributeList ul {
         list-style: none;
 
         div.attrEntry {
-            text-align: left;
-
             div:first-child {
                 margin-bottom: 20px;
-                text-align: center;
             }
 
             label#preferredMfaMethod_label {
@@ -49,16 +46,17 @@ form#attributeVerification div#attributeList ul {
             }
 
             input#readOnlyEmail {
-                font: inherit;
                 color: currentColor;
                 border: none;
-                padding: 0;
-                margin: 5px 0 5px 0;
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 10px;
-                font-size: 20px;
                 border-bottom: 1px solid rgba(38, 53, 140, .5);
+                font: inherit;
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px 0 5px 0;
+                max-width: 100%;
+                padding: 0;
+                text-align: center;
+                width: 100%;
             }
 
             label#phone_option, label#email_option {
@@ -78,17 +76,17 @@ form#attributeVerification div#attributeList ul {
 
                 input#readOnlyEmail_ver_input {
                     background: 0 0;
-                    font: inherit;
-                    color: currentColor;
                     border: none;
+                    border-bottom: 1px solid rgba(38, 53, 140, .5);
+                    color: currentColor;
+                    font: inherit;
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                    max-width: 100%;
                     outline: 0;
                     padding: 0;
-                    margin: 5px 0 5px 0;
+                    text-align: center;
                     width: 100%;
-                    max-width: 100%;
-                    margin-bottom: 10px;
-                    font-size: 20px;
-                    border-bottom: 1px solid rgba(38, 53, 140, .5);
                 }
             }
         }
