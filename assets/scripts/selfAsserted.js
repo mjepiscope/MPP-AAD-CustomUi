@@ -6,6 +6,9 @@ import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js
     A workaround is possible by listening to AJAX calls
     Reference: https://stackoverflow.com/a/68426051
 */
+const STATUS_OK = 0,
+    STATUS_BAD_EMAIL = 2;
+
 const REQUEST_TYPE_CODE_REQUEST = 'VERIFICATION_REQUEST'
     , REQUEST_TYPE_CODE_VALIDATION = 'VALIDATION_REQUEST';
 
