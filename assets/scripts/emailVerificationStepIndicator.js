@@ -12,7 +12,7 @@ const REQUEST_TYPE_RESPONSE = 'RESPONSE'
     , REQUEST_TYPE_VERIFICATION_REQUEST = 'VERIFICATION_REQUEST'
     , REQUEST_TYPE_VALIDATION_REQUEST = 'VALIDATION_REQUEST';
 
-let $body = $('body');
+let $body = document.querySelector('body');
 
 export function setOnStepChangeCallback(callback) {
     var observer = new MutationObserver(callback);
@@ -92,5 +92,5 @@ function handleValidateCodeRequest(jqXhr) {
  * Sets the current step of the form into the body.
  */
 function setBodyAttr(step) {
-    $body.attr('data-step', step);
+    $body.setAttribute('data-step', step);
 }

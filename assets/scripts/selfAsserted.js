@@ -4,10 +4,10 @@ import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js
 setSpinnerStyleDisplay('none');
 setupSpinnerTriggerButtons('div.buttons', 'button#continue');
 
-let $body = $('body');
+let $body = document.querySelector('body');
 
 setOnStepChangeCallback(() => {
-    let step = $body.attr('data-step');
+    let step = $body.getAttribute('data-step');
 
     if (!step) return;
 
