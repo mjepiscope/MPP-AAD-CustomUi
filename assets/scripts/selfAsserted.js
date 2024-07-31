@@ -1,4 +1,4 @@
-import { setupSpinner, setupSpinnerTriggerButtons } from './spinner.js';
+import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js';
 
-setupSpinner();
+setSpinnerStyleDisplay('none');
 setupSpinnerTriggerButtons('div.buttons', 'button#continue');

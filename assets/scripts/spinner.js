@@ -1,52 +1,39 @@
-export function setupSpinner() {
+export function setSpinnerStyleDisplay(display) {
     var spinner = window.document.querySelector('div.spinner-overlay');
 
     if (!spinner) return;
 
-    spinner.style.display = 'none';
+    spinner.style.display = display;
 }
 
 export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
-    //setupSpinner();
-
-    /*var divButtons = window.document.querySelector('div.buttons');*/
     var divButtons = window.document.querySelector(parentSelector);
 
     if (!divButtons) return;
-
-    /*var buttons = Array.prototype.slice.call(divButtons.querySelectorAll('button#next, button#verifyCode, button#cancel'), 0);*/
+    
     var buttons = Array.prototype.slice.call(divButtons.querySelectorAll(buttonSelectors), 0);
 
-    buttons.forEach(function (b) {
-        b.addEventListener('click',
-            function () {
-
-                if (!hasErrorMessage()) {
-                    spinner.style.display = 'block';
-                }
-            });
+    buttons.forEach((b) => {
+        b.addEventListener('click', () => {
+            if (!hasErrorMessage()) {
+                setSpinnerStyleDisplay('block');
+            }
+        });
     });
 }
 
-//function setupSpinner() {
-//    var spinner = window.document.querySelector('div.spinner-overlay');
+function hasErrorMessage() {
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
 
-//    if (!spinner) return;
+    for (var i = 0; i < paragraphs.length; i++) {
+        if (!!paragraphs[i].textContent
+            && paragraphs[i].parentElement.style.display !== 'none')
+            return true;
+    }
 
-//    spinner.style.display = 'none';
+    return false;
+}
 
-//    // Triggers which show the spinner
-//    setupSpinnerTriggers(spinner);
-
-//    // Observers which hide the spinner
-//    setupSpinnerObservers(spinner);
-//}
-
-//function setupSpinnerTriggers(spinner) {
-//    setupSigninEnterKeyTrigger(spinner);
-//    setupButtonTriggers(spinner);
-//    setupVerificationCodeTrigger(spinner);
-//}
 
 //function setupSigninEnterKeyTrigger(spinner) {
 //    var txtPassword = window.document.querySelector('input#password');
