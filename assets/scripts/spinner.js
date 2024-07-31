@@ -9,7 +9,7 @@ export function setSpinnerStyleDisplay(display) {
 export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
     var parents = window.document.querySelectorAll(parentSelector);
 
-    if (!divButtons) return;
+    if (!parents) return;
 
     parents.forEach(p => {
 
