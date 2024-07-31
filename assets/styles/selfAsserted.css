@@ -1,12 +1,20 @@
-div.intro {
+/*div.intro {
     margin: 38px;
 }
 
 div.intro p {
     display: none;
+}*/
+
+div.intro {
+    margin: 38px;
+    
+    p {
+        display: none;
+    }
 }
 
-form#attributeVerification div#attributeList ul {
+/*form#attributeVerification div#attributeList ul {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -22,11 +30,38 @@ form#attributeVerification div#attributeList ul li div.attrEntry label#preferred
     font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 35px;
-}
 
 form#attributeVerification div#attributeList ul li div.attrEntry div.error {
     display: none;
 }
+}*/
+
+form#attributeVerification div#attributeList ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    li {
+        list-style: none;
+
+        div.attrEntry {
+            label#preferredMfaMethod_label {
+                display: block;
+                float: none;
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 35px;
+            }
+            
+            div.error {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
 
 form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_phone,
 form#attributeVerification div#attributeList ul li div.attrEntry input#preferredMfaMethod_email {
