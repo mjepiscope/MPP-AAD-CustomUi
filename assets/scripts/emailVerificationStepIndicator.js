@@ -12,12 +12,13 @@ const REQUEST_TYPE_RESPONSE = 'RESPONSE'
     , REQUEST_TYPE_VERIFICATION_REQUEST = 'VERIFICATION_REQUEST'
     , REQUEST_TYPE_VALIDATION_REQUEST = 'VALIDATION_REQUEST';
 
-let $body = document.querySelector('body');
+//let $body = document.querySelector('body');
+let $api = document.querySelector('div#api');
 
 export function setOnStepChangeCallback(callback) {
     var observer = new MutationObserver(callback);
 
-    observer.observe($body, {
+    observer.observe($api, {
         attributes: true,
         attributeFilter: ['data-step']
     });
@@ -40,7 +41,7 @@ export function identifyStep(settings, jqXhr) {
 
         switch (requestType) {
             case REQUEST_TYPE_RESPONSE:
-                setBodyAttr(requestType);
+                setBodyAttr('send-code');
                 break;
             case REQUEST_TYPE_VERIFICATION_REQUEST:
                 handleSendVerificationCodeRequest(jqXhr);
@@ -92,5 +93,5 @@ function handleValidateCodeRequest(jqXhr) {
  * Sets the current step of the form into the body.
  */
 function setBodyAttr(step) {
-    $body.setAttribute('data-step', step);
+    $api.setAttribute('data-step', step);
 }

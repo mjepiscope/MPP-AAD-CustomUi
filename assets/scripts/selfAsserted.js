@@ -4,14 +4,22 @@ import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js
 setSpinnerStyleDisplay('none');
 setupSpinnerTriggerButtons('div.buttons', 'button#continue');
 
-let $body = document.querySelector('body');
+//let $body = document.querySelector('body');
+let $api = document.querySelector('div#api');
 
 setOnStepChangeCallback(() => {
-    let step = $body.getAttribute('data-step');
+    let step = $api.getAttribute('data-step');
 
     if (!step) return;
 
-    alert(step);
+    switch (step) {
+        case 'send-code':
+            break;
+        case 'verify-code':
+            break;
+        case 'email-verified':
+            break;
+    }
 });
 
 $(document).ajaxSend(function (e, jqXhr, settings) {
