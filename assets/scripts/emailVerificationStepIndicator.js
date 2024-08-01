@@ -76,7 +76,10 @@ function handleValidateCodeRequest(jqXhr) {
             2 - retries exceeded
             3 - incorrect code
         */
-        if (data.result === STATUS_WRONG_CODE) {
+        if (data.result === STATUS_OK) {
+            setVeriedCodeView();
+        }
+        else if (data.result === STATUS_WRONG_CODE) {
             setVerifyCodeView();
         }
     });
@@ -95,4 +98,12 @@ function setVerifyCodeView() {
         $inputCode.value = '';
         $inputCode.focus();
     }
+}
+
+function setVeriedCodeView() {
+    let $btnContinue = document.querySelector('button#continue');
+
+    if (!$btnContinue) return;
+
+    $btnContinue.style.display = 'inline-block';
 }

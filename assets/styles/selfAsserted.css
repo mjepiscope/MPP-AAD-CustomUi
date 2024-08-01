@@ -106,6 +106,10 @@ form#attributeVerification div#attributeList ul {
             }
         }
     }
+
+    div.verifying-modal {
+        display: none;
+    }
 }
 
 div.buttons {
