@@ -93,12 +93,12 @@ form#attributeVerification div#attributeList ul {
                     width: 100%;
                 }
 
-                &#readOnlyEmail_ver_but_verify {
+                button#readOnlyEmail_ver_but_verify {
                     float: left;
                     width: 45%;
                 }
 
-                &#readOnlyEmail_ver_but_resend {
+                button#readOnlyEmail_ver_but_resend {
                     clear: right;
                     float: right;
                     width: 45%;
