@@ -81,6 +81,7 @@ function handleValidateCodeRequest(jqXhr) {
         }
         else if (data.result === STATUS_WRONG_CODE) {
             setVerifyCodeView();
+            preventFormSubmitIfEnterIsPressed();
         }
     });
 }
@@ -106,4 +107,21 @@ function setVeriedCodeView() {
     if (!$btnContinue) return;
 
     $btnContinue.style.display = 'inline-block';
+}
+
+function preventFormSubmitIfEnterIsPressed() {
+    let $formVerify = document.querySelector('form#attributeVerification');
+
+    if (!$formVerify) return;
+
+    $formVerify.addEventListener('keypress', (e) => {
+        if (e.target.dataset.enterForSubmit) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                return;
+            }
+
+            return true;
+        }
+    });
 }

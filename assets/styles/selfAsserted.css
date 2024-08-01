@@ -41,13 +41,18 @@ form#attributeVerification {
                 }
 
                 input#preferredMfaMethod_phone, input#preferredMfaMethod_email {
-                    width: 24px !important;
+                    accent-color: #000078;
                     box-shadow: none;
-                    height: 24px;
+                    clear: left;
                     display: inline-block;
                     float: left;
-                    clear: left;
+                    height: 24px;
                     margin: .5rem;
+                    width: 24px !important;
+                }
+
+                input#preferredMfaMethod_phone:hover, input#preferredMfaMethod_email:hover {
+                    background-color: #001EC8;
                 }
 
                 input#readOnlyEmail {
