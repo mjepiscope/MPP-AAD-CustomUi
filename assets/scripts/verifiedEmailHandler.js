@@ -1,4 +1,4 @@
-import { setSpinnerStyleDisplay } from './spinner.js';
+import { hideSpinner } from './spinner.js';
 
 /*
     Self-Asserted Email-Verification has different steps
@@ -48,7 +48,7 @@ export function handleRequest(settings, jqXhr) {
  */
 function handleSendVerificationCodeRequest(jqXhr) {
     jqXhr.done((data) => {
-        setSpinnerStyleDisplay('none');
+        hideSpinner();
 
         if (data.status === "400" || (data.status === "200" && data.result === STATUS_OK)) {
             setVerifyCodeView();
@@ -65,7 +65,7 @@ function handleSendVerificationCodeRequest(jqXhr) {
  */
 function handleValidateCodeRequest(jqXhr) {
     jqXhr.done((data) => {
-        setSpinnerStyleDisplay('none');
+        hideSpinner();
 
         if (data.status !== "200") return;
 

@@ -1,8 +1,9 @@
-import { handleRequest } from './emailVerificationStepIndicator.js';
-import { setSpinnerStyleDisplay, setupSpinnerTriggerButtons } from './spinner.js';
+import { handleRequest } from './verifiedEmailHandler.js';
+import { hideSpinner, showSpinnerViaButtonClick } from './spinner.js';
 
-setSpinnerStyleDisplay('none');
-setupSpinnerTriggerButtons(
+hideSpinner();
+
+showSpinnerViaButtonClick(
     'div.buttons'
     , 'button#continue, button#readOnlyEmail_ver_but_send, button#readOnlyEmail_ver_but_verify, button#readOnlyEmail_ver_but_resend'
 );

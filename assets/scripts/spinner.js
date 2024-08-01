@@ -1,12 +1,12 @@
-export function setSpinnerStyleDisplay(display) {
-    var spinner = window.document.querySelector('div.spinner-overlay');
-
-    if (!spinner) return;
-
-    spinner.style.display = display;
+export function showSpinner() {
+    setSpinnerStyleDisplay('block');
 }
 
-export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
+export function hideSpinner() {
+    setSpinnerStyleDisplay('none');
+}
+
+export function showSpinnerViaButtonClick(parentSelector, buttonSelectors) {
     var parents = window.document.querySelectorAll(parentSelector);
 
     if (!parents) return;
@@ -20,12 +20,20 @@ export function setupSpinnerTriggerButtons(parentSelector, buttonSelectors) {
 
             b.addEventListener('click', () => {
                 if (!hasErrorMessage()) {
-                    setSpinnerStyleDisplay('block');
+                    showSpinner();
                 }
             });
         });
 
     });
+}
+
+function setSpinnerStyleDisplay(display) {
+    var spinner = window.document.querySelector('div.spinner-overlay');
+
+    if (!spinner) return;
+
+    spinner.style.display = display;
 }
 
 function hasErrorMessage() {

@@ -32,9 +32,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{9C3E5155
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{339AA9E6-2CB9-4DFE-9D55-7A9D8378452D}"
 	ProjectSection(SolutionItems) = preProject
-		assets\scripts\emailVerificationStepIndicator.js = assets\scripts\emailVerificationStepIndicator.js
 		assets\scripts\selfAsserted.js = assets\scripts\selfAsserted.js
 		assets\scripts\spinner.js = assets\scripts\spinner.js
+		assets\scripts\verifiedEmailHandler.js = assets\scripts\verifiedEmailHandler.js
 	EndProjectSection
 EndProject
 Global
