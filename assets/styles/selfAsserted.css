@@ -92,6 +92,17 @@ form#attributeVerification div#attributeList ul {
                     text-align: center;
                     width: 100%;
                 }
+
+                &#readOnlyEmail_ver_but_verify {
+                    float: left;
+                    width: 45%;
+                }
+
+                &#readOnlyEmail_ver_but_resend {
+                    clear: right;
+                    float: right;
+                    width: 45%;
+                }
             }
         }
     }
