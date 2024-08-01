@@ -50,8 +50,7 @@ function handleSendVerificationCodeRequest(jqXhr) {
     jqXhr.done((data) => {
         setSpinnerStyleDisplay('none');
 
-        if ((data.status === "200" && data.result === STATUS_OK)
-            || (data.status === "400" && data.message === 'Claim not verified: [Email Address]')) {
+        if (data.status === "400" || (data.status === "200" && data.result === STATUS_OK)) {
             setVerifyCodeView();
         }
     });
@@ -89,7 +88,7 @@ function setVerifyCodeView() {
     let $divClaimError = document.querySelector('div#claimVerificationServerError');
 
     if (!!$divClaimError) {
-        $divClaimError.style.display = 'inline-block';
+        $divClaimError.style.display = 'none';
     }
 
     let $inputEmail = document.querySelector('input#readOnlyEmail');
