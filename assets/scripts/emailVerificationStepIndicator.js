@@ -31,7 +31,7 @@ export function handleRequest(settings, jqXhr) {
 
     switch (requestType) {
         case REQUEST_TYPE_RESPONSE:
-            setSpinnerStyleDisplay('none');
+            handleSendVerificationCodeRequest(jqXhr);
             break;
         case REQUEST_TYPE_VERIFICATION_REQUEST:
             handleSendVerificationCodeRequest(jqXhr);
