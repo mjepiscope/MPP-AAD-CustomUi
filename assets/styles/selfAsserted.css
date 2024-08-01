@@ -52,7 +52,7 @@ form#attributeVerification {
                 }
 
                 input#preferredMfaMethod_phone:hover, input#preferredMfaMethod_email:hover {
-                    background-color: #001EC8;
+                    accent-color: #001EC8;
                 }
 
                 input#readOnlyEmail {
