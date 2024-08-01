@@ -31,8 +31,6 @@ export function handleRequest(settings, jqXhr) {
 
     switch (requestType) {
         case REQUEST_TYPE_RESPONSE:
-            handleSendVerificationCodeRequest(jqXhr);
-            break;
         case REQUEST_TYPE_VERIFICATION_REQUEST:
             handleSendVerificationCodeRequest(jqXhr);
             break;
@@ -52,7 +50,8 @@ function handleSendVerificationCodeRequest(jqXhr) {
     jqXhr.done((data) => {
         setSpinnerStyleDisplay('none');
 
-        if (data.status === "200" && data.result === STATUS_OK) {
+        if ((data.status === "200" && data.result === STATUS_OK)
+            || (data.status === "400" && data.message === 'Claim not verified: [Email Address]')) {
             setVerifyCodeView();
         }
     });
@@ -87,6 +86,12 @@ function handleValidateCodeRequest(jqXhr) {
 }
 
 function setVerifyCodeView() {
+    let $divClaimError = document.querySelector('div#claimVerificationServerError');
+
+    if (!!$divClaimError) {
+        $divClaimError.style.display = 'inline-block';
+    }
+
     let $inputEmail = document.querySelector('input#readOnlyEmail');
 
     if (!!$inputEmail) {
