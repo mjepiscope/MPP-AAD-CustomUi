@@ -1,4 +1,4 @@
-import { hideSpinner } from './spinner.js';
+import { hideSpinner, showSpinner } from './spinner.js';
 
 /*
     Self-Asserted Email-Verification has different steps
@@ -75,7 +75,7 @@ function handleValidateCodeRequest(jqXhr) {
             3 - incorrect code
         */
         if (data.result === STATUS_OK) {
-            setVeriedCodeView();
+            setVerifiedCodeView();
         }
         else if (data.result === STATUS_WRONG_CODE) {
             setVerifyCodeView();
@@ -105,12 +105,23 @@ function setVerifyCodeView() {
     }
 }
 
-function setVeriedCodeView() {
+function setVerifiedCodeView() {
     let $btnContinue = document.querySelector('button#continue');
 
     if (!$btnContinue) return;
 
-    $btnContinue.style.display = 'inline-block';
+    //$btnContinue.style.display = 'inline-block';
+
+    let $divApi = document.querySelector('div#api');
+
+    if (!$divApi) return;
+
+    $divApi.style.visibility = 'hidden';
+    $divApi.style.maxHeight = '0';
+
+    showSpinner();
+
+    $btnContinue.onclick();
 }
 
 function preventFormSubmitIfEnterIsPressed() {
