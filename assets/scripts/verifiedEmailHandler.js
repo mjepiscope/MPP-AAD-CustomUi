@@ -110,8 +110,6 @@ function setVerifiedCodeView() {
 
     if (!$btnContinue) return;
 
-    //$btnContinue.style.display = 'inline-block';
-
     let $divApi = document.querySelector('div#api');
 
     if (!$divApi) return;
