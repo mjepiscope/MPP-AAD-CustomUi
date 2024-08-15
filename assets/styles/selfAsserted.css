@@ -178,8 +178,8 @@ form#attributeVerification {
         }
     }
 
-    div.verifying-modal {
-        display: none;
+    div.verifying-modal, div#verifying_blurb {
+        display: none !important;
         height: 0;
     }
 }
