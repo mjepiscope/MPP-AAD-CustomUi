@@ -121,7 +121,7 @@ function setVerifiedCodeView() {
 
     showSpinner();
 
-    $btnContinue.onclick();
+    $btnContinue.click();
 }
 
 function preventFormSubmitIfEnterIsPressed() {
