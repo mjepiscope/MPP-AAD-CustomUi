@@ -184,7 +184,7 @@ form#attributeVerification {
 }
 
 div#simplemodal-overlay, div#simplemodal-container {
-    display: none;
+    display: none !important;
 }
 
 form#attributeVerification:has(div#attributeList ul li.Readonly) div.buttons button#continue {
