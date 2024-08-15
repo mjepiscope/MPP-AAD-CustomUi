@@ -178,10 +178,13 @@ form#attributeVerification {
         }
     }
 
-    div.verifying-modal, div#verifying_blurb {
-        display: none !important;
-        height: 0;
+    div.verifying-modal {
+        display: none;
     }
+}
+
+div#simplemodal-overlay, div#simplemodal-container {
+    display: none;
 }
 
 form#attributeVerification:has(div#attributeList ul li.Readonly) div.buttons button#continue {
