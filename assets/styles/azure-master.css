@@ -91,6 +91,7 @@ div#api[data-name="Unified"] {
     &:has(div.social) {
         display: flex;
         flex-direction: column-reverse;
+        gap: 10px;
 
         div.divider {
             display: none;
@@ -114,6 +115,7 @@ div#api[data-name="Unified"] {
             div.options {
                 button {
                     height: 35px;
+                    margin: 0;
                     width: 100px;
                 }
             }
