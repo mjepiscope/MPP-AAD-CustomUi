@@ -1,4 +1,4 @@
-import { hideSpinner, showSpinner } from './spinner.js';
+import { hideSpinner, showSpinner } from './azure-spinner.js';
 
 /*
     Self-Asserted Email-Verification has different steps

@@ -1,5 +1,5 @@
-import { handleRequest } from './verifiedEmailHandler.js';
-import { hideSpinner, showSpinnerViaButtonClick } from './spinner.js';
+import { handleRequest } from './azure-verified-email-handler.js';
+import { hideSpinner, showSpinnerViaButtonClick } from './azure-spinner.js';
 
 hideSpinner();
 

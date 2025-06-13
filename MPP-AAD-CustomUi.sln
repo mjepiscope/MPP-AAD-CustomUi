@@ -5,9 +5,9 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5769656C-E8C8-4224-B9E2-A632A01B5C36}"
 	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
 		README.md = README.md
-		selfAsserted.html = selfAsserted.html
+		azure-self-asserted.html = azure-self-asserted.html
+		azure-master.html = azure-master.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{DE243D00-80C1-46D4-B9A4-9B5C35A9D990}"
@@ -20,9 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{7CB264
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{E0100445-2C01-4F9F-B5FF-99A52DD66082}"
 	ProjectSection(SolutionItems) = preProject
-		assets\styles\master.css = assets\styles\master.css
-		assets\styles\selfAsserted.css = assets\styles\selfAsserted.css
-		assets\styles\spinner.css = assets\styles\spinner.css
+		azure-api.css = azure-api.css
+		assets\styles\azure-master.css = assets\styles\azure-master.css
+		assets\styles\azure-self-asserted.css = assets\styles\azure-self-asserted.css
+		assets\styles\azure-spinner.css = assets\styles\azure-spinner.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{9C3E5155-8D22-4AB8-B2EE-6C8842F54EAE}"
@@ -32,9 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{9C3E5155
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{339AA9E6-2CB9-4DFE-9D55-7A9D8378452D}"
 	ProjectSection(SolutionItems) = preProject
-		assets\scripts\selfAsserted.js = assets\scripts\selfAsserted.js
-		assets\scripts\spinner.js = assets\scripts\spinner.js
-		assets\scripts\verifiedEmailHandler.js = assets\scripts\verifiedEmailHandler.js
+		assets\scripts\azure-spinner.js = assets\scripts\azure-spinner.js
+		azure-master.js = azure-master.js
+		assets\scripts\azure-self-asserted.js = assets\scripts\azure-self-asserted.js
+		assets\scripts\azure-verified-email-handler.js = assets\scripts\azure-verified-email-handler.js
 	EndProjectSection
 EndProject
 Global
