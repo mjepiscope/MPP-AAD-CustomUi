@@ -102,7 +102,7 @@ div#api[data-name="Unified"] {
             justify-content: space-between;
 
             div.intro {
-                &:after {
+                :after {
                     content: 'Other login options:';
                 }
 
